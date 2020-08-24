@@ -1,27 +1,13 @@
-# SberTest
+Требования к задаче:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+1. Первый компонент — текстовое поле с возможностью автоподсказки (autosuggest), которое работает следующим образом: при поиске компонент загружает совпадения подстроки и выводит списком для выбора. При выборе значения оно подставляется в текстовое поле. Компонент должен уметь обработать несколько URL для поиска подстроки. Если необходимое количество значений не найдено в ответе первого метода, то следует обращение ко второму и так далее. Количество требуемых значении и количество URL-адресов определите в виде конфигурационных значений. Методы обращения с сервером используют формат JSON(P) в качестве обмена данными.
 
-## Development server
+2. Второй компонент — поле ввода телефонного номера. Валидацию, формат и требования к нему придумайте сами.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Под компонентами находятся кнопки сохранения и очистки формы. Кнопка сохранения записывает данные из компонент в локальное хранилище браузера (localStorage), после сохранения в хранилище, форма также отправляет данные для сохранения значений на сервер. Кнопка очистки формы удаляет данные из localStorage и очищает поля формы.
 
-## Code scaffolding
+4. После перезагрузки страницы форма должна инициализироваться значениями из локального хранилища (если они там существуют).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+5. Задание должно быть доступно на GitHub или Bitbucket.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Просьба указать сколько ушло времени на эту работу.

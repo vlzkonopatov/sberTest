@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sber-test"
+    }
+  },
+  "defaultProject": "sber-test",
+  "cli": {
+    "analytics": "6d990f49-880b-4a59-98d0-42171c4e4afa"
+  }
 }
