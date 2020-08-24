@@ -1,7 +1,13 @@
 .form-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   .item-form-group {
-    margin: 0 10px;
+    margin: 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    .invalid-feedback {
+      color: red;
+    }
   }
 }

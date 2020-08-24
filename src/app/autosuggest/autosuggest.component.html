@@ -1,5 +1,5 @@
 <div class="autosuggest-component">
-  <input mayInput placeholder="City" [formControl]="cityControl"
+  <input mayInput placeholder="Город" [formControl]="cityControl"
          (keyup)="propagateChange($event.target.value)" (blur)="propagateTouched($event)"/>
   <div class="filter-autosuggest-component" *ngIf="results?.length>0">
     <div *ngFor="let result of results" class="list-filter-autosuggest-component">

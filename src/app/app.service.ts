@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpClient } from '@angular/common/http';
+import {ValueForm} from './app.model';
 
 @Injectable()
 export class ApiService {
@@ -12,6 +13,18 @@ export class ApiService {
   search(queryString: string) {
     const url = this.baseUrl + queryString;
     return this.http.get(url);
+  }
+
+  setFormOnLocalStorage(form: ValueForm) {
+      localStorage.setItem('form', JSON.stringify(form));
+  }
+
+  getFormOnLocalStorage(): ValueForm  {
+    return JSON.parse(localStorage.getItem('form'));
+  }
+
+  clearLocalStorage(){
+    localStorage.clear();
   }
 
 }

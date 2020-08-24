@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ValueForm} from './app.model';
+import {ApiService} from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -14,21 +15,32 @@ export class AppComponent {
 
 
   constructor(
-    public fb: FormBuilder
+    private fb: FormBuilder,
+    private _apiService: ApiService
   ) {
-    this.createForm();
+    const form = this._apiService.getFormOnLocalStorage();
+    this.createForm(form);
   }
 
   public onSubmit = (searchForm: any) => {
     console.log(searchForm.value);
+    this._apiService.setFormOnLocalStorage(searchForm.value);
   };
 
-  private createForm = (form?: ValueForm) => {
+  public clear() {
+    this._apiService.clearLocalStorage();
+    this.form.reset();
+  }
 
+  private createForm = (form?: ValueForm) => {
     this.form = this.fb.group({
       city    : [form?.city,   Validators.required],
-      phone   : [form?.phone,  Validators.required],
+      phone   : [form?.phone,  [Validators.pattern(/^\d{1}\(\d{3}\)-\d{3}-\d{2}-\d{2}/), Validators.required]],
     });
+  };
+
+  get phone() {
+    return this.form.get('phone') as FormControl;
   }
 
 

@@ -1,13 +1,20 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="form-group">
 
-  <div class="item-form-group">
-    <app-autosuggest formControlName="city"></app-autosuggest>
-  </div>
-  <div class="item-form-group">
-    <input mayInput formControlName="phone">
-  </div>
-  <div>
-    <button myButton type="submit">Отправить</button>
-    <button myButton type="button">Очистить</button>
-  </div>
+
+  <ng-container>
+    <div class="item-form-group">
+      <app-autosuggest formControlName="city"></app-autosuggest>
+    </div>
+    <div class="item-form-group">
+      <input formControlName="phone" appPhoneMask mayInput maxlength="16"  placeholder="Введите номер телефона" >
+
+      <span class="invalid-feedback" *ngIf="(phone.touched || phone.dirty) && phone.errors">
+        Используйте формат 8(888)-888-88-88
+    </span>
+    </div>
+  </ng-container>
+    <div>
+      <button myButton [disabled]="!form.valid" type="submit">Отправить</button>
+      <button myButton (click)="clear()" type="button">Очистить</button>
+    </div>
 </form>

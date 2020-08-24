@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AutosuggestComponent } from './autosuggest';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MyButtonDirective, MyInputDirective } from './directive';
+import { MyButtonDirective, MyInputDirective, PhoneMaskDirective } from './directive';
 import { ApiService } from './app.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     AutosuggestComponent,
     MyInputDirective,
-    MyButtonDirective
+    MyButtonDirective,
+    PhoneMaskDirective
   ],
   imports: [
     BrowserModule,

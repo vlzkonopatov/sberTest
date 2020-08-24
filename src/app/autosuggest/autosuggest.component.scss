@@ -1,6 +1,9 @@
 .autosuggest-component {
   display: flex;
   position: relative;
+  input{
+    width: 100%;
+  }
   .filter-autosuggest-component{
     position: absolute;
     margin-top: 30px;
