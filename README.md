@@ -1,4 +1,4 @@
-Demo https://github.com/vlzkonopatov/sberTest
+Demo https://vlzkonopatov.github.io/sberTest/dist/sber-test/ 
 
 Требования к задаче:
 
